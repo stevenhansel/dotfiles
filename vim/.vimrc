@@ -81,6 +81,16 @@ set nowb
 set noswapfile
 set history=750
 
+" Folding method
+set foldmethod=syntax "syntax highlighting items specify folds  
+set foldcolumn=1 "defines 1 col at window left, to indicate folding  
+set foldlevelstart=99 "start file with all folds opened
+
+let javaScript_fold=1
+let typeScript_fold=1
+let javaScriptReact_fold=1
+let typeScriptReact_fold=1
+
 " Enable syntax highlighting
 syntax on
 set encoding=utf8
