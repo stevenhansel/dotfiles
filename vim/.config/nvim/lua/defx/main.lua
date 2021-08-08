@@ -1,5 +1,4 @@
 local cmd = vim.api.nvim_command
-local call = vim.fn
 local map = vim.api.nvim_set_keymap
 local defaults = { noremap = true, silent = true }
 

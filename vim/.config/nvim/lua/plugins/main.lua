@@ -12,6 +12,10 @@ require "paq" {
 	'kristijanhusak/defx-icons';
 	'kristijanhusak/defx-git';
 
+  -- git
+  'tpope/vim-fugitive';
+  'airblade/vim-gitgutter';
+
 	-- Telescope
 	'nvim-lua/popup.nvim';
 	'nvim-lua/plenary.nvim';

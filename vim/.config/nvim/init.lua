@@ -6,6 +6,9 @@ require('general/mappings')
 require('general/settings')
 
 -- Plugin configuration
+require('nvim-lspconfig/main')
+require('nvim-compe/main')
 require('telescope/main')
 require('defx/main')
 require('indentline/main')
+require('gitgutter/main')
