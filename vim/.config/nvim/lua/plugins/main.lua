@@ -3,13 +3,15 @@ require "paq" {
   -- nvim-lspconfig
   "neovim/nvim-lspconfig",
   "glepnir/lspsaga.nvim",
-  -- Treesitter
-  {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
   -- Telescope
   "nvim-lua/popup.nvim",
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim",
   {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
+  -- Autocompletion
+  "hrsh7th/nvim-compe",
+  -- Treesitter
+  {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
   -- Formatter
   "mhartington/formatter.nvim",
   -- defx
@@ -18,10 +20,15 @@ require "paq" {
   "kristijanhusak/defx-git",
   -- Theme
   "tomasiser/vim-code-dark",
+  -- Statusline
+  "hoob3rt/lualine.nvim",
   -- git
   "tpope/vim-fugitive",
   "airblade/vim-gitgutter",
+  -- Snippets
+  "honza/vim-snippets",
   -- Utilities
+  "kyazdani42/nvim-web-devicons",
   "tpope/vim-commentary",
   "yggdroot/indentline",
   "jiangmiao/auto-pairs",
