@@ -1,5 +1,5 @@
 -- Neovim API Aliases
-local cmd = vim.cmd
+local cmd = vim.api.nvim_command
 
 local g = vim.g			-- Global Variables
 local o = vim.o			-- Global Options
@@ -14,6 +14,8 @@ o.clipboard = 'unnamedplus'
 o.ignorecase = true
 o.smartcase = true
 
+o.shortmess = 'I'
+
 -- Backups
 b.swapfile = false
 
@@ -23,25 +25,20 @@ o.history = 500
 o.hidden = true
 
 -- Indentation
-b.expandtab = true
-b.smarttab = true
+o.expandtab = true
+o.smarttab = true
 
-b.shiftwidth = 2
-b.tabstop = 2
+o.shiftwidth = 2
+o.tabstop = 2
 
-b.autoindent = true		
-b.smartindent = true
-b.wrap = true
+o.autoindent = true		
+o.smartindent = true
+o.wrap = true
 
 -- Folding
-b.foldmethod = 'syntax' 
-b.foldcolumn = 1 
-b.foldlevelstart = 99 
-
-b.javaScript_fold=1
-b.typeScript_fold=1
-b.javaScriptReact_fold=1
-b.typeScriptReact_fold=1
+o.foldmethod = 'syntax' 
+o.foldcolumn = "1"
+o.foldlevelstart = 99 
 
 -- Colorscheme
 o.termguicolors = true
