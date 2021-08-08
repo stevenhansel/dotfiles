@@ -1,10 +1,12 @@
 local cmd = vim.api.nvim_command
 local map = vim.api.nvim_set_keymap
-local defaults = { noremap = true, silent = true }
+local defaults = {noremap = true, silent = true}
 
-local defxSearchCommand = ":Defx -listed -resume -columns=indent:mark:icon:space:icons:space:filename:git:size -buffer-name=tab`tabpagenr()` -show-ignored-files `expand('%:p:h')` -search=`expand('%:p')`<CR>"
+local defxSearchCommand =
+  ":Defx -listed -resume -columns=indent:mark:icon:space:icons:space:filename:git:size -buffer-name=tab`tabpagenr()` -show-ignored-files `expand('%:p:h')` -search=`expand('%:p')`<CR>"
 
-cmd([[
+cmd(
+  [[
 	function! s:defx_my_settings() abort
 	  nnoremap <silent><buffer><expr> <CR> defx#do_action('open')
 	  nnoremap <silent><buffer><expr> c defx#do_action('copy')
@@ -39,17 +41,14 @@ cmd([[
 	endfunction
 
 	autocmd FileType defx call s:defx_my_settings()
-]])
-
-cmd([[
-	call defx#custom#column('icon', { 'directory_icon': '▸', 'opened_icon': '▾', 'root_icon': ' ' })
-	call defx#custom#column('git', 'indicators', { 'Modified'  : 'M', 'Staged'    : '✚', 'Untracked' : '✭', 'Renamed'   : '➜', 'Unmerged'  : '═', 'Ignored'   : '☒', 'Deleted'   : '✖', 'Unknown'   : '?' })
-]])
-
-map(
-	'n',
-	'sf', 
-	defxSearchCommand,
-	defaults
+]]
 )
 
+cmd(
+  [[
+	call defx#custom#column('icon', { 'directory_icon': '▸', 'opened_icon': '▾', 'root_icon': ' ' })
+	call defx#custom#column('git', 'indicators', { 'Modified'  : 'M', 'Staged'    : '✚', 'Untracked' : '✭', 'Renamed'   : '➜', 'Unmerged'  : '═', 'Ignored'   : '☒', 'Deleted'   : '✖', 'Unknown'   : '?' })
+]]
+)
+
+map("n", "sf", defxSearchCommand, defaults)

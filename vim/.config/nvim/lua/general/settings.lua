@@ -1,20 +1,20 @@
 -- Neovim API Aliases
 local cmd = vim.api.nvim_command
 
-local g = vim.g			-- Global Variables
-local o = vim.o			-- Global Options
-local b = vim.b			-- Buffer Scoped Options
-local w = vim.w			-- Window Scoped Options
+local g = vim.g -- Global Variables
+local o = vim.o -- Global Options
+local b = vim.b -- Buffer Scoped Options
+local w = vim.w -- Window Scoped Options
 
--- General 
-o.syntax = 'enable'
-o.mouse = 'a'
-o.clipboard = 'unnamedplus'
+-- General
+o.syntax = "enable"
+o.mouse = "a"
+o.clipboard = "unnamedplus"
 
 o.ignorecase = true
 o.smartcase = true
 
-o.shortmess = 'I'
+o.shortmess = "I"
 
 -- Backups
 b.swapfile = false
@@ -31,18 +31,12 @@ o.smarttab = true
 o.shiftwidth = 2
 o.tabstop = 2
 
-o.autoindent = true		
+o.autoindent = true
 o.smartindent = true
 o.wrap = true
 
--- Folding
-o.foldmethod = 'syntax' 
-o.foldcolumn = "1"
-o.foldlevelstart = 99 
-
 -- Remove autocomment on new lines (really annoying)
 cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
-
 
 -- Colorscheme
 o.termguicolors = true

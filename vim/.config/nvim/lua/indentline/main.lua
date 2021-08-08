@@ -12,7 +12,7 @@ g.indentLine_setConceal = 1
 g.indentLine_concealcursor = "inc"
 g.indentLine_conceallevel = 2
 
-g.indentLine_char = '|'
+g.indentLine_char = "|"
 
 g.indentLine_leadingSpaceChar = "•"
 
@@ -24,5 +24,4 @@ g.indentLine_color_dark = 1 -- (default: 2)
 g.indentLine_color_term = 239
 
 -- True Color
-g.indentLine_color_gui = '#616161'
-
+g.indentLine_color_gui = "#616161"
