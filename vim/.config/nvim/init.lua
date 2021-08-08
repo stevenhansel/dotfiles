@@ -8,3 +8,4 @@ require('general/settings')
 -- Plugin configuration
 require('telescope/main')
 require('defx/main')
+require('indentline/main')

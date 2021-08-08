@@ -40,6 +40,10 @@ o.foldmethod = 'syntax'
 o.foldcolumn = "1"
 o.foldlevelstart = 99 
 
+-- Remove autocomment on new lines (really annoying)
+cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
+
+
 -- Colorscheme
 o.termguicolors = true
 cmd([[colorscheme codedark]])
