@@ -4,4 +4,4 @@ const TestComponent = () => {
       <div></div>
     </Test>
   );
-}
+};
