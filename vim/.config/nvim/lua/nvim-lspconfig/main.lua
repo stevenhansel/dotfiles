@@ -50,6 +50,8 @@ lsp.tsserver.setup {
   }
 }
 
+lsp.gopls.setup {}
+
 lsp.diagnosticls.setup {
   on_attach = on_attach,
   filetypes = {
