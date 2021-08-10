@@ -37,9 +37,6 @@ set -u fish_user_paths /opt/homebrew/bin $fish_user_paths
 # Rust Cargo
 set -u fish_user_paths /Users/shinteimai/.cargo/bin $fish_user_paths
 
-# Go
-set -u fish_user_paths /Users/shinteimai/go/bin $fish_user_paths
-
 ###########################################################
 # ALIASES 
 ###########################################################

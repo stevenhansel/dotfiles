@@ -18,6 +18,8 @@ require "paq" {
   {"Shougo/defx.nvim", run = ":UpdateRemotePlugins"},
   "kristijanhusak/defx-icons",
   "kristijanhusak/defx-git",
+  -- Presence
+  "andweeb/presence.nvim",
   -- Theme
   "tomasiser/vim-code-dark",
   -- Statusline

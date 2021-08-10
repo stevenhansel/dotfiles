@@ -42,15 +42,25 @@ local on_attach = function(client, bufnr)
   }
 end
 
-lsp.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
-  init_options = {
-    hostInfo = "neovim"
+local lsp_default_config = {on_attach = on_attach}
+
+local servers = {
+  tsserver = {
+    filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
+    init_options = {
+      hostInfo = "neovim"
+    }
+  },
+  gopls = {
+    cmd = {"gopls", "--remote=auto"},
+    filetypes = {"go", "gomod"},
+    root_dir = lsp.util.root_pattern("go.mod")
   }
 }
 
-lsp.gopls.setup {}
+for server, config in pairs(servers) do
+  lsp[server].setup(vim.tbl_deep_extend("force", lsp_default_config, config))
+end
 
 lsp.diagnosticls.setup {
   on_attach = on_attach,
@@ -64,7 +74,8 @@ lsp.diagnosticls.setup {
     "less",
     "scss",
     "markdown",
-    "pandoc"
+    "pandoc",
+    "go"
   },
   init_options = {
     linters = {
