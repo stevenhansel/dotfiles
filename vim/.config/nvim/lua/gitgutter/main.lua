@@ -10,4 +10,4 @@ cmd(
 )
 
 g.gitgutter_enabled = 1
-g.gitgutter_async = 1
+g.gitgutter_async = 0
