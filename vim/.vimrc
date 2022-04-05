@@ -56,9 +56,11 @@ call plug#begin(g:pluggedPath)
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
 
+  " Discord
+  Plug 'andweeb/presence.nvim'
+
   " Snippets
   Plug 'honza/vim-snippets'
-
   " Language Syntax
   Plug 'yuezk/vim-js', { 'for': ['javascript', 'javascriptreact'] }
   Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescriptreact'] }
@@ -593,6 +595,28 @@ endfunction
 set noshowmode
 set laststatus=2
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Discord
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General options
+let g:presence_auto_update         = 1
+let g:presence_neovim_image_text   = "neovim 0.5"
+let g:presence_main_image          = "file"
+let g:presence_client_id           = "793271441293967371"
+let g:presence_debounce_timeout    = 10
+let g:presence_enable_line_number  = 0
+let g:presence_blacklist           = []
+let g:presence_buttons             = 0
+let g:presence_file_assets         = {}
+
+" Rich Presence text options
+let g:presence_editing_text        = "editing a file"
+let g:presence_file_explorer_text  = "browsing files"
+let g:presence_git_commit_text     = "committing changes"
+let g:presence_plugin_manager_text = "managing plugins"
+let g:presence_reading_text        = "reading a file"
+let g:presence_workspace_text      = "---"
+let g:presence_line_number_text    = "line %s out of %s"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CoC 

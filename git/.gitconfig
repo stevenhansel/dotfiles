@@ -3,7 +3,7 @@
 
 [user]
 	email = stevenhanselgo@gmail.com
-  name = ShinteiMai
+  name = Myron
 
 [pager]
     diff = delta
@@ -19,3 +19,7 @@
 
 [interactive]
     diffFilter = delta --color-only
+[credential]
+	helper = osxkeychain
+[url "git@github.com:"]
+	insteadOf = https://github.com/

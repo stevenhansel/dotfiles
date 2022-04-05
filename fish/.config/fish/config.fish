@@ -37,6 +37,12 @@ set -u fish_user_paths /opt/homebrew/bin $fish_user_paths
 # Rust Cargo
 set -u fish_user_paths /Users/shinteimai/.cargo/bin $fish_user_paths
 
+# Go
+set -u fish_user_paths /Users/shinteimai/go/bin $fish_user_paths
+
+# Qt
+set -u fish_user_paths /Users/shinteimai/Qt/6.2.1/macos/bin $fish_user_paths
+
 ###########################################################
 # ALIASES 
 ###########################################################
