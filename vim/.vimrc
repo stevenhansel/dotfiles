@@ -730,4 +730,5 @@ let g:coc_global_extensions = [
   \ 'coc-python',
   \ 'coc-tailwindcss',
   \ 'coc-go',
+  \ 'coc-svelte',
   \ ]
