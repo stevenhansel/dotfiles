@@ -15,6 +15,8 @@ require('indentline/main')
 require('closetag/main')
 require('lualine/main')
 
+require('custom/tabline')
+
 return require('packer').startup(function(use)
   -- Packer, the package manager :D
   use 'wbthomason/packer.nvim'
