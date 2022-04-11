@@ -6,6 +6,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require('general/main')
+require('gitgutter/main')
 
 return require('packer').startup(function(use)
   -- Packer, the package manager :D
@@ -13,6 +14,10 @@ return require('packer').startup(function(use)
 
   -- Colorscheme
   use 'NLKNguyen/papercolor-theme'
+
+  -- Git
+  use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
 
   if packer_bootstrap then
     require('packer').sync()
