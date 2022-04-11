@@ -9,6 +9,8 @@ require('general/main')
 require('rnvimr/main')
 require('gitgutter/main')
 require('hexokinase/main')
+require('indentline/main')
+require('closetag/main')
 
 return require('packer').startup(function(use)
   -- Packer, the package manager :D
