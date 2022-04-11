@@ -5,8 +5,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-print(vim.fn.stdpath('data'))
-
 require('general/main')
 require('coc/main')
 require('rnvimr/main')
@@ -15,6 +13,7 @@ require('gitgutter/main')
 require('hexokinase/main')
 require('indentline/main')
 require('closetag/main')
+require('lualine/main')
 
 return require('packer').startup(function(use)
   -- Packer, the package manager :D
@@ -32,9 +31,16 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'kyazdani42/nvim-web-devicons'
 
   -- Colorscheme
   use 'NLKNguyen/papercolor-theme'
+
+  -- Statusline
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- Git
   use 'tpope/vim-fugitive'
