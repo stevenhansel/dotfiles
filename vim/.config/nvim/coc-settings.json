@@ -57,5 +57,6 @@
         "usePlaceholders": true
       }
     }
-  }
+  },
+  "svelte.enable-ts-plugin": true
 }
