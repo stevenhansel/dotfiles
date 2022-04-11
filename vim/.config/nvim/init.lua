@@ -6,6 +6,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require('general/main')
+require('coc/main')
 require('rnvimr/main')
 require('gitgutter/main')
 require('hexokinase/main')
@@ -15,6 +16,12 @@ require('closetag/main')
 return require('packer').startup(function(use)
   -- Packer, the package manager :D
   use 'wbthomason/packer.nvim'
+
+  -- coc, autocompletion
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release'
+  }
 
   -- Colorscheme
   use 'NLKNguyen/papercolor-theme'
