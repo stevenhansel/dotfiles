@@ -6,8 +6,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require('general/main')
-require('gitgutter/main')
 require('rnvimr/main')
+require('gitgutter/main')
+require('hexokinase/main')
 
 return require('packer').startup(function(use)
   -- Packer, the package manager :D
@@ -32,19 +33,40 @@ return require('packer').startup(function(use)
 
   -- Programming Language
     -- Go
-    use 'fatih/vim-go'
+    use {
+      'fatih/vim-go',
+      ft = {'go'}
+    }
 
     -- JavaScript/TypeScript
-    use 'pangloss/vim-javascript'
-    use 'yuezk/vim-js'
-    use 'HerringtonDarkholme/yats.vim'
-    use 'maxmellon/vim-jsx-pretty'
+    use {
+      'pangloss/vim-javascript',
+      ft = {'js', 'jsx', 'ts', 'tsx'}
+    }
+    use {
+      'yuezk/vim-js',
+      ft = {'js', 'jsx', 'ts', 'tsx'}
+    }
+    use {
+      'HerringtonDarkholme/yats.vim',
+      ft = {'ts', 'tsx'}
+    }
+    use {
+      'maxmellon/vim-jsx-pretty',
+      ft = {'js', 'jsx', 'ts', 'tsx'}
+    }
 
     -- Python
-    use 'vim-python/python-syntax'
+    use {
+      'vim-python/python-syntax',
+      ft = {'python'}
+    }
   
     -- JSON
-    use 'elzr/vim-json'
+    use {
+      'elzr/vim-json',
+      ft = {'json'}
+    }
 
     -- Markdown
     use 'godlygeek/tabular'
