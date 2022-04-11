@@ -23,6 +23,33 @@ return require('packer').startup(function(use)
   -- File exporer
   use 'kevinhwang91/rnvimr'
 
+  -- Editing Helpers
+  use 'tpope/vim-commentary' 
+  use 'yggdroot/indentline'
+  use 'jiangmiao/auto-pairs'
+  use 'alvan/vim-closetag'
+  use { 'rrethy/vim-hexokinase',  run = 'make hexokinase' }
+
+  -- Programming Language
+    -- Go
+    use 'fatih/vim-go'
+
+    -- JavaScript/TypeScript
+    use 'pangloss/vim-javascript'
+    use 'yuezk/vim-js'
+    use 'HerringtonDarkholme/yats.vim'
+    use 'maxmellon/vim-jsx-pretty'
+
+    -- Python
+    use 'vim-python/python-syntax'
+  
+    -- JSON
+    use 'elzr/vim-json'
+
+    -- Markdown
+    use 'godlygeek/tabular'
+    use 'preservim/vim-markdown'
+
   if packer_bootstrap then
     require('packer').sync()
   end
