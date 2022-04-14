@@ -58,5 +58,6 @@
       }
     }
   },
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "Lua.telemetry.enable": false
 }

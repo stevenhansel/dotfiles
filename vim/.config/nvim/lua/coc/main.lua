@@ -6,16 +6,31 @@ cmd 'source ~/.config/nvim/lua/coc/function.vim'
 
 -- coc extensions
 vim.g['coc_global_extensions'] = {
-   'coc-json',
-   'coc-snippets',
-   'coc-tsserver',
-   'coc-prettier',
+   -- HTML, CSS, JS/TS
    'coc-eslint',
-   'coc-clangd',
-   'coc-elixir',
-   'coc-python',
+   'coc-tsserver',
    'coc-tailwindcss',
+   'coc-prettier',
+   'coc-html',
+   'coc-css',
+   'coc-svelte',
+   -- Go
    'coc-go',
+   -- Python
+   'coc-jedi',
+   -- Lua
+   'coc-sumneko-lua',
+   -- C/C++
+   'coc-clangd',
+   -- SQL
+   'coc-sql',
+   -- Bash Scripting
+   'coc-sh',
+   -- Utils
+   'coc-json',
+   'coc-markdownlint',
+   'coc-yaml',
+   'coc-snippets',
 }
 
 -- mappings

@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- Editing Helpers
-  use 'tpope/vim-commentary' 
+  use 'tpope/vim-commentary'
   use 'yggdroot/indentline'
   use 'jiangmiao/auto-pairs'
   use 'alvan/vim-closetag'
