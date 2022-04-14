@@ -7,7 +7,6 @@ end
 
 require('general/main')
 require('coc/main')
-require('rnvimr/main')
 require('telescope/main')
 require('gitgutter/main')
 require('hexokinase/main')
@@ -49,7 +48,7 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
 
   -- File exporer
-  use 'kevinhwang91/rnvimr'
+  use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- Editing Helpers
   use 'tpope/vim-commentary' 
@@ -62,37 +61,31 @@ return require('packer').startup(function(use)
     -- Go
     use {
       'fatih/vim-go',
-      ft = {'go'}
+      run = ':GoInstallBinaries'
     }
 
-    -- JavaScript/TypeScript
+    -- HTML, CSS, JS/TS
     use {
       'pangloss/vim-javascript',
-      ft = {'js', 'jsx', 'ts', 'tsx'}
     }
     use {
       'yuezk/vim-js',
-      ft = {'js', 'jsx', 'ts', 'tsx'}
     }
     use {
       'HerringtonDarkholme/yats.vim',
-      ft = {'ts', 'tsx'}
     }
     use {
       'maxmellon/vim-jsx-pretty',
-      ft = {'js', 'jsx', 'ts', 'tsx'}
     }
 
     -- Python
     use {
       'vim-python/python-syntax',
-      ft = {'python'}
     }
   
     -- JSON
     use {
       'elzr/vim-json',
-      ft = {'json'}
     }
 
     -- Markdown
