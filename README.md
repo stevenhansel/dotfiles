@@ -4,6 +4,10 @@ ShinteiMai's personal dotfiles. P.S. currently this dotfile is made specific to 
 
 ## TODOS
 - [ ] Refactor vim configuration to use this https://github.com/b0o/mapx.nvim
+- [ ] Update the TMUX styling
+- [ ] Migrate from fish shell (not POSIX compliant) to bash
+- [ ] Make an arch linux configuration (dwm, grub, etc)
+
 
 ## Requirements
 
