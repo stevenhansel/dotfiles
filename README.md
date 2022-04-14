@@ -2,6 +2,9 @@
 
 ShinteiMai's personal dotfiles. P.S. currently this dotfile is made specific to macOS.
 
+## TODOS
+- [ ] Refactor vim configuration to use this https://github.com/b0o/mapx.nvim
+
 ## Requirements
 
 You'll need homebrew to install all the default packages, if you don't need the default casks and packages, then you'll only need GNU Stow to manage the dotfiles
