@@ -8,7 +8,6 @@ ShinteiMai's personal dotfiles. P.S. currently this dotfile is made specific to 
 - [ ] Migrate from fish shell (not POSIX compliant) to bash
 - [ ] Make an arch linux configuration (dwm, grub, etc)
 
-
 ## Requirements
 
 You'll need homebrew to install all the default packages, if you don't need the default casks and packages, then you'll only need GNU Stow to manage the dotfiles

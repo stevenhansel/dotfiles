@@ -13,6 +13,7 @@ require('hexokinase/main')
 require('indentline/main')
 require('closetag/main')
 require('lualine/main')
+require('vim-markdown/main')
 
 require('custom/tabline')
 
@@ -57,40 +58,26 @@ return require('packer').startup(function(use)
   use 'alvan/vim-closetag'
   use { 'rrethy/vim-hexokinase',  run = 'make hexokinase' }
 
-  -- Programming Language
-    -- Go
-    use {
-      'fatih/vim-go',
-      run = ':GoInstallBinaries'
-    }
+  -- Go
+  use { 'fatih/vim-go', run = ':GoInstallBinaries' }
 
-    -- HTML, CSS, JS/TS
-    use {
-      'pangloss/vim-javascript',
-    }
-    use {
-      'yuezk/vim-js',
-    }
-    use {
-      'HerringtonDarkholme/yats.vim',
-    }
-    use {
-      'maxmellon/vim-jsx-pretty',
-    }
+  -- HTML, CSS, JS/TS
+  use 'othree/html5.vim'
 
-    -- Python
-    use {
-      'vim-python/python-syntax',
-    }
-  
-    -- JSON
-    use {
-      'elzr/vim-json',
-    }
+  use 'pangloss/vim-javascript'
+  use 'HerringtonDarkholme/yats.vim'
+  use 'maxmellon/vim-jsx-pretty'
+  use 'evanleck/vim-svelte'
 
-    -- Markdown
-    use 'godlygeek/tabular'
-    use 'preservim/vim-markdown'
+  -- Python
+  use 'vim-python/python-syntax'
+
+  -- JSON
+  use 'elzr/vim-json'
+
+  -- Markdown
+  use 'godlygeek/tabular'
+  use 'preservim/vim-markdown'
 
   if packer_bootstrap then
     require('packer').sync()
