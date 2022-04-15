@@ -25,7 +25,8 @@ telescope.setup {
       theme = 'ivy',
       hide_parent_dir = true,
       hidden = true,
-      cwd_to_path = true,
+      grouped = true,
+      -- cwd_to_path = true,
       mappings = {
         ['i'] = {
           -- your custom insert mode mappings
@@ -59,6 +60,6 @@ map('n', ';g', '<cmd>Telescope live_grep<cr>', { noremap = true, silent = true }
 map(
   "n",
   "sf",
-  "<cmd>Telescope file_browser<cr>",
+  "<cmd>Telescope file_browser path=%:p:h<cr>",
   { noremap = true }
 )
