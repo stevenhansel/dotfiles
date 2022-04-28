@@ -16,6 +16,8 @@ vim.g['coc_global_extensions'] = {
    'coc-svelte',
    -- Go
    'coc-go',
+   -- Flutter
+   'coc-flutter',
    -- Python
    'coc-jedi',
    -- Lua

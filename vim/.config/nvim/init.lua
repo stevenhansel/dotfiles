@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
   -- Go
   use { 'fatih/vim-go', run = ':GoInstallBinaries' }
 
+  -- Dart
+  use 'dart-lang/dart-vim-plugin'
+
   -- HTML, CSS, JS/TS
   use 'othree/html5.vim'
 
