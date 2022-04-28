@@ -1,4 +1,5 @@
 local fn = vim.fn
+local cmd = vim.cmd
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -14,8 +15,11 @@ require('indentline/main')
 require('closetag/main')
 require('lualine/main')
 require('vim-markdown/main')
+require('vim-go/main')
 
 require('custom/tabline')
+
+cmd 'source ~/.config/nvim/lua/language_mappings.vim'
 
 return require('packer').startup(function(use)
   -- Packer, the package manager :D
