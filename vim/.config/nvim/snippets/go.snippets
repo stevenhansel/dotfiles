@@ -1,4 +1,4 @@
-snippet fns "New Service" b
+snippet ns "New Service" b
 package ${1:package_name}
 
 type Service struct {
@@ -6,10 +6,16 @@ type Service struct {
 }
 
 func New(
-	${2/([a-zA-Z]+)\s([a-zA-Z]+)/$1 $1,/gm}
+	${2/([a-zA-Z]+)\s([a-zA-Z]+)/$1 $2,/gm}
 ) *Service {
 	return &Service{
 		${2/([a-zA-Z]+)\s([a-zA-Z]+)/$1: $1,/gm}$0
 	}
+}
+endsnippet
+
+snippet nsf "New Service Method" b
+func (s *Service) ${1:name}(${2:params}) (${3:return_type}) {
+	$0
 }
 endsnippet
