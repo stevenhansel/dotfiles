@@ -16,6 +16,7 @@ require('closetag/main')
 require('lualine/main')
 require('vim-markdown/main')
 require('vim-go/main')
+require('vim-json/main')
 
 require('custom/tabline')
 

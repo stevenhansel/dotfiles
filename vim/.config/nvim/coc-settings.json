@@ -59,5 +59,6 @@
     }
   },
   "svelte.enable-ts-plugin": true,
-  "Lua.telemetry.enable": false
+ "Lua.telemetry.enable": false,
+  "sql.database": "postgresql"
 }
