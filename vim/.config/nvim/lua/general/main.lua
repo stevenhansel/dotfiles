@@ -39,13 +39,9 @@ set.ffs = 'unix,dos,mac'
 
 -- colorscheme
 set.termguicolors = true
-set.background = 'dark'
+set.background = 'light'
 cmd[[ set t_Co=256 ]]
 cmd[[ colorscheme PaperColor ]]
-
--- cursor style
-cmd[[ highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40 ]]
-cmd[[ highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000 ]]
 
 -- filetype plugins
 cmd[[ filetype plugin on ]]
