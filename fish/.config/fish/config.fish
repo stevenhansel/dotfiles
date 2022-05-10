@@ -32,16 +32,16 @@ end
 ###########################################################
 
 # Set Homebrew Path exclusive to M1 Chip
-set -u fish_user_paths /opt/homebrew/bin $fish_user_paths
+fish_add_path /opt/homebrew/bin
 
 # Rust Cargo
-set -u fish_user_paths /Users/shinteimai/.cargo/bin $fish_user_paths
+fish_add_path /Users/shinteimai/.cargo/bin
 
 # Go
-set -u fish_user_paths /Users/shinteimai/go/bin $fish_user_paths
+fish_add_path /Users/shinteimai/go/bin
 
-# Qt
-set -u fish_user_paths /Users/shinteimai/Qt/6.2.1/macos/bin $fish_user_paths
+# Poetry (Python)
+fish_add_path /Users/shinteimai/.poetry/bin
 
 ###########################################################
 # ALIASES 
@@ -127,7 +127,7 @@ set -g theme_nerd_fonts yes
 set -g theme_show_exit_status yes
 set -g theme_display_jobs_verbose yes
 set -g default_user your_normal_user
-set -g theme_color_scheme dark
+set -g theme_color_scheme solarized-light
 set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
 set -g theme_newline_prompt '$ '

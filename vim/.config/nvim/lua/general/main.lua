@@ -13,7 +13,6 @@ set.history = 750
 
 -- tab configuration
 set.expandtab = true
-set.smarttab = true
 
 set.tabstop = 2
 set.shiftwidth = 2
@@ -44,6 +43,7 @@ cmd[[ set t_Co=256 ]]
 cmd[[ colorscheme PaperColor ]]
 
 -- filetype plugins
+cmd[[ filetype on ]]
 cmd[[ filetype plugin on ]]
 cmd[[ filetype indent on ]]
 

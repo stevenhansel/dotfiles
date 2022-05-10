@@ -59,6 +59,7 @@
     }
   },
   "svelte.enable-ts-plugin": true,
- "Lua.telemetry.enable": false,
-  "sql.database": "postgresql"
+  "Lua.telemetry.enable": false,
+  "sql.database": "postgresql",
+  "python.venvPath": "~/Library/Caches/pypoetry/virtualenvs/"
 }
