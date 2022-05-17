@@ -17,6 +17,7 @@ require('lualine/main')
 require('vim-markdown/main')
 require('vim-go/main')
 require('vim-json/main')
+require('vim-svelte-plugin/main')
 
 require('custom/tabline')
 
@@ -66,6 +67,10 @@ return require('packer').startup(function(use)
   -- Go
   use { 'fatih/vim-go', run = ':GoInstallBinaries' }
 
+  -- Rust
+  use { 'rust-lang/rust.vim' }
+  use 'alx741/vim-rustfmt'
+
   -- Dart
   use 'dart-lang/dart-vim-plugin'
 
@@ -76,6 +81,7 @@ return require('packer').startup(function(use)
   use 'HerringtonDarkholme/yats.vim'
   use 'maxmellon/vim-jsx-pretty'
   use 'evanleck/vim-svelte'
+  use 'leafOfTree/vim-svelte-plugin'
 
   -- Python
   use 'vim-python/python-syntax'

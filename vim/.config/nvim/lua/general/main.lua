@@ -31,6 +31,10 @@ set.laststatus = 2
 set.clipboard = 'unnamedplus'
 set.ignorecase = true
 
+-- folding
+set.foldmethod = 'syntax'
+set.foldnestmax = 1
+
 -- syntax highlighting
 cmd[[ syntax on ]]
 set.encoding = 'utf8'
