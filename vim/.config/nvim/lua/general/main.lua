@@ -34,6 +34,7 @@ set.ignorecase = true
 -- folding
 set.foldmethod = 'syntax'
 set.foldnestmax = 1
+set.foldlevelstart = 1
 
 -- syntax highlighting
 cmd[[ syntax on ]]
