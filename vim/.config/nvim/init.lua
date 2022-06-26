@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- Colorscheme
-  use 'NLKNguyen/papercolor-theme'
+  use 'cormacrelf/vim-colors-github'
 
   -- Statusline
   use {
@@ -85,9 +85,6 @@ return require('packer').startup(function(use)
 
   -- Python
   use 'vim-python/python-syntax'
-
-  -- JSON
-  use 'elzr/vim-json'
 
   -- Markdown
   use 'godlygeek/tabular'

@@ -43,9 +43,9 @@ set.ffs = 'unix,dos,mac'
 
 -- colorscheme
 set.termguicolors = true
-set.background = 'light'
+set.background = 'dark'
 cmd[[ set t_Co=256 ]]
-cmd[[ colorscheme PaperColor ]]
+cmd[[ colorscheme github ]]
 
 -- filetype plugins
 cmd[[ filetype on ]]
