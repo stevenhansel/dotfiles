@@ -1,0 +1,17 @@
+# Navigation
+shift + cmd - j : yabai -m window --focus next || yabai -m window --focus first
+shift + cmd - k : yabai -m window --focus prev || yabai -m window --focus last
+
+# Resize windows
+shift + cmd - h: \
+     yabai -m window --resize left:-100:0 ; \
+     yabai -m window --resize right:-100:0
+
+shift + cmd - l: \
+     yabai -m window --resize right:100:0 ; \
+     yabai -m window --resize left:100:0
+
+# Focus to another monitor
+
+# Spawn terminal
+shift + cmd - return: open -na Kitty
