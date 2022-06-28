@@ -11,6 +11,7 @@ alias v='nvim'
 alias g='git'
 alias untar='tar -xzvf $1'
 alias ls="exa"
+alias ide='$HOME/Scripts/ide.sh'
 
 alias reload='source $HOME/.zshrc'
 
@@ -35,3 +36,4 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
