@@ -7,16 +7,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require('general/main')
-require('coc/main')
 require('telescope/main')
 require('gitgutter/main')
 require('hexokinase/main')
 require('indentline/main')
 require('closetag/main')
 require('lualine/main')
-require('vim-markdown/main')
 require('vim-go/main')
-require('vim-json/main')
 require('vim-svelte-plugin/main')
 
 require('custom/tabline')
@@ -27,12 +24,6 @@ return require('packer').startup(function(use)
   -- Packer, the package manager :D
   use 'wbthomason/packer.nvim'
 
-  -- coc, autocompletion
-  use {
-    'neoclide/coc.nvim',
-    branch = 'release'
-  }
-
   -- Search
   use {
     'nvim-telescope/telescope.nvim',
@@ -40,6 +31,9 @@ return require('packer').startup(function(use)
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kyazdani42/nvim-web-devicons'
+
+  -- File exporer
+  use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- Colorscheme
   use 'cormacrelf/vim-colors-github'
@@ -54,9 +48,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
 
-  -- File exporer
-  use { "nvim-telescope/telescope-file-browser.nvim" }
-
   -- Editing Helpers
   use 'tpope/vim-commentary'
   use 'yggdroot/indentline'
@@ -69,7 +60,6 @@ return require('packer').startup(function(use)
 
   -- Rust
   use { 'rust-lang/rust.vim' }
-  use 'alx741/vim-rustfmt'
 
   -- Dart
   use 'dart-lang/dart-vim-plugin'
@@ -82,13 +72,6 @@ return require('packer').startup(function(use)
   use 'maxmellon/vim-jsx-pretty'
   use 'evanleck/vim-svelte'
   use 'leafOfTree/vim-svelte-plugin'
-
-  -- Python
-  use 'vim-python/python-syntax'
-
-  -- Markdown
-  use 'godlygeek/tabular'
-  use 'preservim/vim-markdown'
 
   if packer_bootstrap then
     require('packer').sync()
