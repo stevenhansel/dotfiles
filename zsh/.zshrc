@@ -10,6 +10,7 @@ alias c='clear'
 alias v='nvim'
 alias g='git'
 alias untar='tar -xzvf $1'
+alias ls="exa"
 
 alias reload='source $HOME/.zshrc'
 
@@ -19,10 +20,18 @@ path+='$HOME/.cargo/bin' # rust
 path+='$HOME/go/bin' # go
 
 plugins=(
+  brew
+  docker
   git
+  golang
+  node
+  npm
+  nvm
+  rust
   tmux
-  zsh-autosuggestions
   zsh-vi-mode
+  zsh-interactive-cd
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
