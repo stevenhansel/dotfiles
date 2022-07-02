@@ -7,6 +7,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require('general/main')
+require('nvim-lspconfig/main')
+require('treesitter/main')
 require('telescope/main')
 require('gitgutter/main')
 require('hexokinase/main')
@@ -21,55 +23,56 @@ require('custom/tabline')
 cmd 'source ~/.config/nvim/lua/language_mappings.vim'
 
 return require('packer').startup(function(use)
-  -- Packer, the package manager :D
+  -- packer, the package manager
   use 'wbthomason/packer.nvim'
 
-  -- Search
+  -- finder
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use 'kyazdani42/nvim-web-devicons'
-
-  -- File exporer
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
-  -- Colorscheme
+  -- ui enchancements
   use 'cormacrelf/vim-colors-github'
-
-  -- Statusline
+  use 'kyazdani42/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  -- Git
+  -- git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
 
-  -- Editing Helpers
+  -- editing helpers
   use 'tpope/vim-commentary'
   use 'yggdroot/indentline'
   use 'jiangmiao/auto-pairs'
   use 'alvan/vim-closetag'
   use { 'rrethy/vim-hexokinase',  run = 'make hexokinase' }
 
-  -- Go
+  -- snippets
+  use 'SirVer/ultisnips'
+  use 'honza/vim-snippets'
+
+  -- language support
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
   use { 'fatih/vim-go', run = ':GoInstallBinaries' }
-
-  -- Rust
   use { 'rust-lang/rust.vim' }
-
-  -- Dart
   use 'dart-lang/dart-vim-plugin'
-
-  -- HTML, CSS, JS/TS
   use 'othree/html5.vim'
-
-  use 'pangloss/vim-javascript'
-  use 'HerringtonDarkholme/yats.vim'
-  use 'maxmellon/vim-jsx-pretty'
   use 'evanleck/vim-svelte'
   use 'leafOfTree/vim-svelte-plugin'
 
