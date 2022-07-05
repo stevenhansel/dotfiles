@@ -1,12 +1,13 @@
-require('nvim-lsp-installer').setup{}
+require('nvim-lsp-installer').setup {}
 local nvim_lsp = require('lspconfig')
 local cmp = require('cmp')
 
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', 'fm', ':Format<cr>')
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
@@ -15,8 +16,10 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  require("lsp-format").on_attach(client)
+
   -- Mappings.
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
@@ -75,86 +78,52 @@ cmp.setup.cmdline(':', {
   })
 })
 
-require('lspconfig')['rust_analyzer'].setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require('lspconfig')['gopls'].setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require('lspconfig')['tsserver'].setup{
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  capabilities = capabilities,
-}
-require('lspconfig')['pyright'].setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require('lspconfig')['svelte'].setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-require('lspconfig')['sumneko_lua'].setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
+require('lsp-format').setup {
+  gopls = {
+    sync = true
+  },
+  rust_analyzer = {
+    sync = true
+  },
+  tsserver = {
+    sync = true
+  },
+  eslint = {
+    sync = true
+  }
 }
 
-nvim_lsp.diagnosticls.setup {
+require('lspconfig')['rust_analyzer'].setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact','json',  'css' },
-  init_options = {
-    linters = {
-      eslint = {
-        command = 'eslint_d',
-        rootPatterns = { '.git' },
-        debounce = 100,
-        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-        sourceName = 'eslint_d',
-        parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '[eslint] ${message} [${ruleId}]',
-          security = 'severity'
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning'
-        }
-      },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
-    },
-    formatters = {
-      eslint_d = {
-        command = 'eslint_d',
-        rootPatterns = { '.git' },
-        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-      },
-      prettier = {
-        command = 'prettier_d_slim',
-        rootPatterns = { '.git' },
-        -- requiredFiles: { 'prettier.config.js' },
-        args = { '--stdin', '--stdin-filepath', '%filename' }
-      }
-    },
-    formatFiletypes = {
-      css = 'prettier',
-      javascript = 'prettier',
-      javascriptreact = 'prettier',
-      json = 'prettier',
-      scss = 'prettier',
-      less = 'prettier',
-      typescript = 'prettier',
-      typescriptreact = 'prettier',
-    }
-  }
+  capabilities = capabilities,
+  file_types = { "rust" },
+}
+require('lspconfig')['gopls'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  file_types = { "go" },
+}
+require('lspconfig')['tsserver'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
+    "vue" },
+}
+require('lspconfig')['eslint'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
+    "vue" },
+}
+require('lspconfig')['pyright'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+require('lspconfig')['svelte'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+require('lspconfig')['sumneko_lua'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
