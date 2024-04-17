@@ -1,0 +1,10 @@
+.DS_Store
+
+# nvim
+vim/.config/nvim/plugin/packer_compiled.lua
+
+# xmonad
+xmonad/.xmonad/.stack-work
+xmonad/.xmonad/build-x86_64-linux
+xmonad/.xmonad/xmonad-x86_64-linux
+xmonad/.xmonad/xmonad.errors
