@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
 		"gopls",
 		"solargraph",
 		"pylsp",
-		"terraformls",
+    "clangd"
 	},
 })
 

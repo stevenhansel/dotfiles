@@ -8,6 +8,15 @@ local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 local path = util.path
 
+local handle = io.popen("command -v avr-gcc")
+local avr_gcc
+if handle then
+	avr_gcc = handle:read("*a"):sub(1, -2)
+	handle:close()
+else
+	avr_gcc = nil;
+end
+
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -146,8 +155,9 @@ require("lspconfig")["solargraph"].setup({
 	},
 })
 
-require("lspconfig")["terraformls"].setup({
+require("lspconfig")["clangd"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-  file_types = { "terraform", "hcl" }
+  cmd = {vim.fn.stdpath("data") .. "/mason/bin/clangd", avr_gcc and "--query-driver=" .. avr_gcc},
+	filetypes = { "c", "cpp", "h", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
 })

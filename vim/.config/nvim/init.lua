@@ -68,7 +68,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/nvim-cmp")
 	use("lukas-reineke/cmp-under-comparator")
 
-	use("github/copilot.vim")
+  -- use("github/copilot.vim")
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
