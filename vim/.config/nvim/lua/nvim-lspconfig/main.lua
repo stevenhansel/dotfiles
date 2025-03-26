@@ -14,7 +14,7 @@ if handle then
 	avr_gcc = handle:read("*a"):sub(1, -2)
 	handle:close()
 else
-	avr_gcc = nil;
+	avr_gcc = nil
 end
 
 local opts = { noremap = true, silent = true }
@@ -55,6 +55,8 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 	}, {
 		{ name = "buffer" },
+	}, {
+		{ name = "copilot" },
 	}),
 })
 
@@ -158,6 +160,6 @@ require("lspconfig")["solargraph"].setup({
 require("lspconfig")["clangd"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-  cmd = {vim.fn.stdpath("data") .. "/mason/bin/clangd", avr_gcc and "--query-driver=" .. avr_gcc},
+	cmd = { vim.fn.stdpath("data") .. "/mason/bin/clangd", avr_gcc and "--query-driver=" .. avr_gcc },
 	filetypes = { "c", "cpp", "h", "hpp", "inl", "objc", "objcpp", "cuda", "proto" },
 })

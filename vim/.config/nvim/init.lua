@@ -25,6 +25,7 @@ require("bufferline/main")
 require("gitsigns/main")
 require("nvim-colorizer/main")
 require("typescript-tools/main")
+-- require("copilot/main")
 require("theme/main")
 
 return require("packer").startup(function(use)
@@ -68,7 +69,28 @@ return require("packer").startup(function(use)
 	use("hrsh7th/nvim-cmp")
 	use("lukas-reineke/cmp-under-comparator")
 
-  -- use("github/copilot.vim")
+	use({
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = { enabled = false },
+				panel = { enabled = false },
+				filetypes = {
+					yaml = true,
+					yml = true,
+				},
+			})
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	})
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
