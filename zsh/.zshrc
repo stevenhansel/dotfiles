@@ -54,11 +54,15 @@ alias t="tmux new"
 alias ta="tmux attach -t $1"
 alias tl="tmux list-sessions"
 alias tr="tmux kill-session -t $1"
+alias tk="tmux kill-session"
 
-# scripts
+# Scripts
 alias ide='$HOME/Scripts/ide.sh'
 alias idev='$HOME/Scripts/idev.sh'
-alias sync='$HOME/Scripts/rsync.sh'
+
+alias dty-services='$HOME/Scripts/dty_services.sh'
+alias dty-sdks='$HOME/Scripts/dty_sdks.sh'
+alias dty-devops='$HOME/Scripts/dty_devops.sh'
 
 ###
 #
